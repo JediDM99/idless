@@ -41,7 +41,7 @@ function updateTime(h, m) {
 	}
 
 	//wait one minute before calling itself again
-	myVar = setTimeout(updateTime(h,m), 600)//in reality they should be set to 60000, this is for testing purposes
+	myVar = setTimeout(updateTime(h,m), 60000)//in reality they should be set to 60000, this is for testing purposes
 	return;
 }
 
