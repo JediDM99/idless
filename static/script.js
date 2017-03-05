@@ -32,7 +32,7 @@ function createPrompt() {
 
 function updateTime(h, m) {
 	if(h==0 && m==0) {
-		document.getElementById('time_remaining').innerHTML = h + ":" + m
+		document.getElementById('time_remaining').innerHTML = "0:00"
 		return
 	}
 	//show the time on the timer
