@@ -3,7 +3,7 @@ var timerIsGoing
 
 //need to create alert when you click the button
 function createPrompt() {
-	label = prompt("What are you making?")
+	label = prompt("What are you waiting on?")
 	var time = prompt("Time Remaining (hh:mm):").split(":")
 	var hours = time[0]
 	var minutes = time[1]
