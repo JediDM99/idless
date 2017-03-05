@@ -22,6 +22,10 @@ function updateTime(h, m) {
 
 	    //decrement minutes. If minutes go under 0, reset them and decrease hours
 	    if(m>0) m--
+	    else if(h==0 && m==0) {
+	    	//send a "done" message through AJAX
+	    	removeTimer()
+	    }
 	    else {
 	    	m=60
 	    	h--
@@ -29,10 +33,6 @@ function updateTime(h, m) {
 
 	    if(h==0 && m==5) {
 	    	//send a "5 mins left" message through AJAX
-	    }
-	    if(h==0 && m==0) {
-	    	//send a "done" message through AJAX
-	    	removeTimer()
 	    }
 	}
 }
