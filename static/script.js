@@ -24,49 +24,22 @@ function createPrompt() {
 	updateTime(Number(hours),Number(minutes))
 };
 
-function updateTime(h, m) {//FIX THIS!!!!
-	while(timerIsGoing) {
-		//show the time on the timer
-		checkTime(m)
-	    document.getElementById('time_remaining').innerHTML = h + ":" + m
+function updateTime(h, m) {
+	if(h==0 && m==0) return
+	//show the time on the timer
+	checkTime(m)
+	document.getElementById('time_remaining').innerHTML = h + ":" + m
 
-		//wait one minute
-		myVar = setTimeout(function blank(){}, 60000)//in reality they should be set to 60000, this is for testing purposes
-
-	    //decrement minutes. If minutes go under 0, reset them and decrease hours
-	    if(m>0) m--
-	    else if(h==0 && m==0) {
-	    	//send a "done" message through AJAX
-		    $.ajax({
-	        	url: "/labels",
-	        	type: "POST",
-	        	data: JSON.stringify({
-	        		label: label
-       		 	}),
-      			dataType: "json",
-      		  	contentType: "application/json"
-     		 })
-			removeTimer()
-	    	return;
-	    }
-	    else {
-	    	m=60
-	    	h--
-	    }
-
-	    if(h==0 && m==5) {
-	    	//send a "5 mins left" message through AJAX
-		    $.ajax({
-	        	url: "/reminder",
-	        	type: "POST",
-	        	data: JSON.stringify({
-	        		label: label
-       		 	}),
-      			dataType: "json",
-      		  	contentType: "application/json"
-     		})
-	    }
+	//decrement minutes. If minutes go under 0, reset them and decrease hours
+	if(m>0) m--
+	else {
+	    m=60
+	    h--
 	}
+
+	//wait one minute before calling itself again
+	myVar = setTimeout(updateTime(h,m){}, 600)//in reality they should be set to 60000, this is for testing purposes
+	return;
 }
 
 function removeTimer() {
