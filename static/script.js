@@ -7,6 +7,11 @@ function createPrompt() {
 	var time = prompt("Time Remaining (hh:mm):").split(":")
 	var hours = time[0]
 	var minutes = time[1]
+	while !(isNumber(hours)&&isNumber(minutes)) {
+	var time = prompt("Time Remaining (hh:mm):").split(":")
+	var hours = time[0]
+	var minutes = time[1]	
+	}
 	//send preliminary message to user
 	//jQuery.post('/prelim', JSON.stringify({'label':label, 'hours':hours, 'minutes':minutes}), function(){console.log('completed req')}, "json")
 	$.ajax({
@@ -55,6 +60,10 @@ function removeTimer() {
 function checkTime(i) {
     if (i < 10) {i = "0" + i}  // add zero in front of numbers < 10
     return i
+}
+
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
 //AJAX code goes here
