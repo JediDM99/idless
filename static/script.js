@@ -2,9 +2,9 @@
 var label
 
 //need to create alert when you click the button
-document.getElementById('timerbuttoncontainer').onclick = function() {
+function createPrompt() {
 	var label = prompt("Timer Label:")
-	var time = prompt("Time Remaining:").split(":")
+	var time = prompt("Time Remaining (hh:mm):").split(":")
 	var hours = time[0]
 	var minutes = time[1]
 	updateTime(hours,minutes)

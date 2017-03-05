@@ -17,5 +17,13 @@ client.messages.create(
     body="Your " + label + " has finished printing!", 
 )
 
+@sms.route("/labels", methods=["POST"])
+def labels():
+    # Extract data from request
+    label = request.json["label"]
+    print "Received label " + str(label)
+    
+    return json.dumps({"status": "OK"})
+
 if __name__ == "__main__":
     sms.run(debug=True)
