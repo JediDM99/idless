@@ -5,8 +5,8 @@ var timerIsGoing
 function createPrompt() {
 	var label = prompt("Timer Label:")
 	var time = prompt("Time Remaining (hh:mm):").split(":")
-	var hours = time[0]
-	var minutes = time[1]
+	var hours = Number(time[0])
+	var minutes = Number(time[1])
 	timerIsGoing=true
 	updateTime(hours,minutes)
 };
