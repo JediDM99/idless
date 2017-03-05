@@ -1,7 +1,7 @@
 var label
 
 //need to create alert when you click the button
-document.getElementById('createnew_button').onclick = function() {
+document.getElementById('timerbutton').onclick = function() {
 	var label = prompt("Timer Label:")
 	var time = prompt("Time Remaining:").split(":")
 	var hours = time[0]
@@ -10,7 +10,7 @@ document.getElementById('createnew_button').onclick = function() {
    //when you click submit it runs setTimer()
 }​
 
-function updateTime(hours, minutes) {
+function updateTime(h, m) {
 	while(true) {
 		//show the time on the timer
 		checkTime(m)
