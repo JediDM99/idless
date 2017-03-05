@@ -2,13 +2,13 @@
 var label
 
 //need to create alert when you click the button
-document.getElementById('timerbutton').onclick = function() {
+document.getElementById('timerbuttoncontainer').onclick = function() {
 	var label = prompt("Timer Label:")
 	var time = prompt("Time Remaining:").split(":")
 	var hours = time[0]
 	var minutes = time[1]
 	updateTime(hours,minutes)
-}​;
+};
 
 function updateTime(h, m) {
 	while(true) {
@@ -38,7 +38,7 @@ function updateTime(h, m) {
 	    document.getElementById('clear_button').onclick = function() {
 	    	removeTimer()
    			return
-		}​;​
+		}
 	}
 }
 
