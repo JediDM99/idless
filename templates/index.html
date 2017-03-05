@@ -9,7 +9,39 @@
 	</head>
 	<body>
 		<h1 id="logo", align="center">Idless</h1>
-		<button class="timerbutton", align="center">start a new timer</button>
+		<div style="text-align: center;">
+   		<input type="button" value="Start a new timer!">
+   		<style> 
+div {
+    width: 1px;
+    height: 1px;
+    background-color: red;
+    position: relative;
+    -webkit-animation-name: moveDown; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: 1; /* Safari 4.0 - 8.0 */
+    -webkit-animation-direction: reverse; /* Safari 4.0 - 8.0 */
+    animation-name: moveDown;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-direction: reverse;    
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes moveDown {
+    
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes moveDown {
+    
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+</style>
+		</div>
 	</body>
 </html>
 
