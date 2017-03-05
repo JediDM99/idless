@@ -2,25 +2,19 @@ var label
 
 //need to create alert when you click the button
 document.getElementById('createnew_button').onclick = function() {
+	var label = prompt("Timer Label:")
+	var time = prompt("Time Remaining:").split(":")
+	var hours = time[0]
+	var minutes = time[1]
    //show alert/insert html? allow people to enter label_id and timer_label
-}​;​
-
-//labels the timer and starts countdown
-function setTimer() {
-	label = document.getElementById('label_id').value.toString()
-	document.getElementById('timer_label').innerHTML = label
-
-	durationH = Number(document.getElementById('duration_h_id').value)
-	durationM = Number(document.getElementById('duration_m_id').value)
-	updateTime(durationH, durationM)
-}
+   //when you click submit it runs setTimer()
+}​
 
 function updateTime(hours, minutes) {
 	while(true) {
 		//show the time on the timer
 		checkTime(m)
 	    document.getElementById('time_remaining').innerHTML = h + ":" + m
-		m = Number(m)
 
 		//wait one minute
 		myVar = setTimeout(function blank(){}, 60)//in reality they should be set to 60000, this is for testing purposes
