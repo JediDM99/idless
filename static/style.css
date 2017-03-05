@@ -2,12 +2,37 @@ body {
 	background-color: #bdc3c7;
 }
 
-#logocontainer {
+.buttons span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttons span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttons:hover span {
+  padding-right: 40px;
+}
+
+.buttons:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.logocontainer {
 	margin: auto;
 	margin-top: 100px;
 	width: 500px;
 	height: 350px;
-	background-color: #ff0000;
+	background-color: #2c3e50;
 	border-radius: 25px;
 }
 
@@ -17,13 +42,37 @@ body {
 	line-height: 350px; 
 	color: #ffffff;
 	font-size: 140px;
-	font-family: 'Lobster', cursive;
-	text-align: center;
+	font-family: 'Titillium Web', sans-serif;
+}
+.timerbuttoncontainer {
+	
 }
 
-.timerbutton {
-	margin: auto;
-	margin-top: 100px;
-	border-radius: 5px;
-	border: transparent;
+#timerbutton {
+    display: block; /* change this from inline-block */
+    width: 30%; /* setting the width */
+    margin: 0 auto; /* this will center  it */
+	margin-top: 50px;
+    position: relative;
+	height: 150px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 60px;
+    outline: none;
+    color: #ffffff;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 25px;
+    background-color: #8585ad;
+    border-bottom:1px solid #7b8b2f;
 }
+
+#timerbutton:hover {
+    background-color: #52527a;
+}
+
+#timerbuttontext {
+	color: #ffffff;
