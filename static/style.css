@@ -111,8 +111,30 @@ body {
 		font-family: 'Maven Pro', sans-serif;
 	}
 	
-	#clearbutton {
-		
+	#clear_button {
+		display: block; /* change this from inline-block */
+		width: 30%; /* setting the width */
+		margin: 0 auto; /* this will center  it */
+		margin-top: 10%;
+		position: relative;
+		height: 15%;
+		font-family: 'Maven Pro', sans-serif;
+		font-size: 60px;
+		outline: none;
+		color: #ffffff;
+		border: none;
+		text-decoration: none;
+		text-align: center;
+		cursor: pointer;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 25px;
+		background-color: #996633;
+		border-bottom:1px solid #7b8b2f;
+	}
+	
+	#clear_button:hover {
+		font-siZe: 80px;
 	}
 
 @media only screen and (min-width: 500px)  {
