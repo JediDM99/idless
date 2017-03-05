@@ -6,13 +6,15 @@ from twilio.rest import TwilioRestClient
 # put your own credentials here 
 ACCOUNT_SID = "ACe980192c091ed4100d6b581a169a55bf" 
 AUTH_TOKEN = "59d21c92d86271a6d6ec8bb51c8f8040" 
+
+label = null;
  
 client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
  
 client.messages.create(
     to="+16109370549", 
     from_="+14848044148", 
-    body="Test message", 
+    body="Your " + label + " has finished printing!", 
 )
 
 if __name__ == "__main__":
