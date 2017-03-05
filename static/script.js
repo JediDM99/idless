@@ -25,6 +25,7 @@ function updateTime(h, m) {
 	    else if(h==0 && m==0) {
 	    	//send a "done" message through AJAX
 	    	removeTimer()
+	    	return;
 	    }
 	    else {
 	    	m=60
