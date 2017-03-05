@@ -1,12 +1,16 @@
 var label
 var timerIsGoing
 
+jQuery.post(url + '/labels', {'label':label}, function(){console.log('completed req')})
+
 //need to create alert when you click the button
 function createPrompt() {
 	var label = prompt("Timer Label:")
 	var time = prompt("Time Remaining (hh:mm):").split(":")
 	var hours = Number(time[0])
 	var minutes = Number(time[1])
+	//send preliminary message to user through AJAX: label + " will be done in " + hours + "hours and " + minutes + "minutes."
+
 	timerIsGoing=true
 	updateTime(hours,minutes)
 };
@@ -51,4 +55,6 @@ function checkTime(i) {
 }
 
 //AJAX code goes here
-//should pass label
+//one should pass preliminary message
+//two should send 5 mins left message
+//three should send done message
