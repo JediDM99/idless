@@ -11,19 +11,21 @@ label = null;
  
 client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
  
-client.messages.create(
-    to="+16109370549", 
-    from_="+14848044148", 
-    body="Your " + label + " has finished printing!", 
-)
 
 @sms.route("/labels", methods=["POST"])
 def labels():
     # Extract data from request
     label = request.json["label"]
     print "Received label " + str(label)
-    
     return json.dumps({"status": "OK"})
+    #somehow we need to prevent the message(s) being sent until this runs...I don't know enough python to do that
+	client.messages.create(
+	    to="+16109370549", 
+	    from_="+14848044148", 
+	    body="Your " + label + " has finished printing!", 
+	)
+
+
 
 if __name__ == "__main__":
     sms.run(debug=True)
