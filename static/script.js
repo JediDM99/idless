@@ -1,5 +1,5 @@
-
 var label
+var timerIsGoing
 
 //need to create alert when you click the button
 function createPrompt() {
@@ -7,11 +7,12 @@ function createPrompt() {
 	var time = prompt("Time Remaining (hh:mm):").split(":")
 	var hours = time[0]
 	var minutes = time[1]
+	timerIsGoing=true
 	updateTime(hours,minutes)
 };
 
 function updateTime(h, m) {
-	while(true) {
+	while(timerIsGoing) {
 		//show the time on the timer
 		checkTime(m)
 	    document.getElementById('time_remaining').innerHTML = h + ":" + m
@@ -32,19 +33,14 @@ function updateTime(h, m) {
 	    if(h==0 && m==0) {
 	    	//send a "done" message through AJAX
 	    	removeTimer()
-	    	return
 	    }
-	    //this clears the timer without sending a messsage
-	    document.getElementById('clear_button').onclick = function() {
-	    	removeTimer()
-   			return
-		}
 	}
 }
 
 function removeTimer() {
     var elem = document.getElementById('timer');
     elem.parentNode.removeChild(elem);
+    timerIsGoing = false;
     return false;
 }
 
