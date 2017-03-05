@@ -23,6 +23,18 @@
 				}
 		</script>
 
+		<script type="text/javascript">
+			function creatNew(f) {
+				var aInputs=f.getElementsByTagName('input');
+				for(var i=0; i<aInputs.length; i++) {
+				    if(aInputs[i].className=='hide') {
+				        aInputs[i].className='';
+				        break;
+				        }
+				    }
+				}
+		</script>
+
 		<style type="text/css">
 		input {display:block;}
 		.hide {display:none;} 
@@ -37,7 +49,8 @@
 		<input class="hide" type="text" name="txt4">
 		<input class="hide" type="text" name="txt5">
 
-		<button type="button" onclick="addElement(this.form);">Start new timer!</button>
+		<button type="button" createNew_button;>Start new timer!</button>
+		<button type="button" clear_button;">Clear!</button>
 		</div>
 
 
