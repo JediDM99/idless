@@ -1,16 +1,14 @@
 var label
 var timerIsGoing
 
-jQuery.post(url + '/labels', {'label':label}, function(){console.log('completed req')})
-
 //need to create alert when you click the button
 function createPrompt() {
 	var label = prompt("Timer Label:")
 	var time = prompt("Time Remaining (hh:mm):").split(":")
 	var hours = Number(time[0])
 	var minutes = Number(time[1])
-	//send preliminary message to user through AJAX: label + " will be done in " + hours + "hours and " + minutes + "minutes."
-
+	//send preliminary message to user
+	jQuery.post(url + '/prelim', {'label':label, 'hours':hours, 'minutes':minutes}, function(){console.log('completed req')})
 	timerIsGoing=true
 	updateTime(hours,minutes)
 };
@@ -28,6 +26,7 @@ function updateTime(h, m) {
 	    if(m>0) m--
 	    else if(h==0 && m==0) {
 	    	//send a "done" message through AJAX
+	    	jQuery.post(url + '/labels', {'label':label}, function(){console.log('completed req')})
 	    	removeTimer()
 	    	return;
 	    }
@@ -38,12 +37,13 @@ function updateTime(h, m) {
 
 	    if(h==0 && m==5) {
 	    	//send a "5 mins left" message through AJAX
+	    	jQuery.post(url + '/labels', {'label':label}, function(){console.log('completed req')})
 	    }
 	}
 }
 
 function removeTimer() {
-    var elem = document.getElementById('timer');
+    var elem = document.getElementById('timer_label'); 'time_remaining'
     elem.parentNode.removeChild(elem);
     timerIsGoing = false;
     return false;
