@@ -54,7 +54,7 @@ body {
 		margin: 0 auto; /* this will center  it */
 		position: relative;
 		height: 10%;
-		font-size: 24px;
+		font-size: 36px;
 		outline: none;
 		color: #c0392b;
 		border: none;
@@ -77,19 +77,24 @@ body {
     background-color: #ffffff;
     color: #7f8c8d; 
     font-size: 72px;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: auto;
+    margin-right: auto;
     height: 7%;
+    width: 30%;
     padding-top: 5px;
     padding-bottom: 5px;
   }
 
   #timer_label {
     text-align: left;
+    margin-left: 10px;
   }
 	
   #time_remaining {
     text-align: right;
+    margin-right: 10px;
   }
 
 	.descriptioncontainer {
@@ -126,7 +131,7 @@ body {
 		margin: auto; /* this will center  it */
 		position: relative;
 		height: 10%;
-		font-size: 24px;
+		font-size: 36px;
 		outline: none;
 		color: #c0392b;
 		border: none;
