@@ -28,26 +28,29 @@ function createPrompt() {
 	timerIsGoing=true
 	document.getElementById('timer_label').innerHTML = label
 	updateTime(Number(hours),Number(minutes))
-	alert("!")
 };
 
 function updateTime(h, m) {
-	if(h==0 && m==0) return
+	if(h==0 && m==0) {
+		document.getElementById('time_remaining').innerHTML = h + ":" + m
+		return
+	}
 	//show the time on the timer
 	m = checkTime(m)
+	//console.log(m + " string")
 	document.getElementById('time_remaining').innerHTML = h + ":" + m
 	m = Number(m)
+	//console.log(m + " number")
 
 	//decrement minutes. If minutes go under 0, reset them and decrease hours
 	if(m>0) m--
 	else {
-	    m=60
+	    m=59
 	    h--
 	}
 
 	//wait one minute before calling itself again
-	myVar = setTimeout(updateTime(h,m), 60000)//in reality they should be set to 60000, this is for testing purposes
-	return;
+	myVar = setTimeout(function(){updateTime(h,m)}, 60000)//in reality they should be set to 60000, this is for testing purposes
 }
 
 function removeTimer() {

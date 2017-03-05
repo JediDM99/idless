@@ -14,6 +14,7 @@ AUTH_TOKEN = "59d21c92d86271a6d6ec8bb51c8f8040"
 client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
 
 def timer(timerName, seconds):
+	#seconds/=10 #just for testing purposes
 	if(seconds>300):
 		time.sleep(seconds-300)
 		client.messages.create(
