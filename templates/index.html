@@ -14,19 +14,20 @@
 			<h1 id="logo">Idless</h1>
 		</div>
 		<div class="timerbuttoncontainer">
-			<button class="buttons" id="createNew_button" onClick="createPrompt()"><span class="buttonstext">start a new timer</span></button>
+			<button class="buttons" id="createNew_button" onClick="createPrompt()"><span class="buttonstext">Start a new timer!</span></button>
 		</div>
+	</div>
+	<div style="text-align: center;">
+			<label id="timer_label" style="display: inline-block; padding: 0px 10px 0px 10px;" ></label>
+			<label id="time_remaining" style="display: inline-block; padding: 0px 10px 0px 10px;" ></label>
+			<button class="buttons" id="clear_button" onclick="removeTimer()">Clear</button>
 	</div>
 	<div class="descriptioncontainer">
 		<h1 id="whatIsIdless">What is Idless?</h1>
 		<p id="idlessDescription">Idless is an application designed to let you set reminders for yourself and message you once they happen. 
 		Whether it's picking up your laundry or meeting a friend for dinner, Idless can help you be sure you do whatever you need to.</p>
 	</div>
-		<div style="text-align: center;">
-			<label id="timer_label" style="display: inline-block; padding: 0px 10px 0px 10px;" ></label>
-			<label id="time_remaining" style="display: inline-block; padding: 0px 10px 0px 10px;" ></label>
-			<button class="buttons" id="clear_button" onclick="removeTimer()">Clear</button>
-		</div>
+		
 	</body>
 </html>
 
