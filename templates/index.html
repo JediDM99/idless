@@ -8,34 +8,40 @@
 		<link rel="stylesheet" type="text/css" href="/style.css">
 	</head>
 	<body>
+
 		<h1 id="logo", align="center">Idless</h1>
-		<div style="text-align: center;">
-   		<input type="button" value="Start a new timer!">
-   		<style> 
-			div {
-			    width: 1px;
-			    height: 1px;
-			    background-color: red;
-			    position: relative;
-			    -webkit-animation-name: moveDown;
-			    -webkit-animation-duration: 4s;
-			    -webkit-animation-iteration-count: 1; 
-			    -webkit-animation-direction: reverse;
-			    animation-name: moveDown;
-			    animation-duration: 4s;
-			    animation-iteration-count: 1;
-			    animation-direction: reverse;    
-			}
-			@-webkit-keyframes moveDown {
-			    75%  { top:200px;}
-			    100% { top:0px;}
-			}
-			@keyframes moveDown {
-			    75%  { top:200px;}
-			    100% { top:0px;}
-			}
+
+		<script type="text/javascript">
+			function addElement(f) {
+				var aInputs=f.getElementsByTagName('input');
+				for(var i=0; i<aInputs.length; i++) {
+				    if(aInputs[i].className=='hide') {
+				        aInputs[i].className='';
+				        break;
+				        }
+				    }
+				}
+		</script>
+
+		<style type="text/css">
+		input {display:block;}
+		.hide {display:none;} 
 		</style>
+
+
+		<form action="#" name="form1">
+		<div style="text-align: center;">
+		<input type="text" name="txt1">
+		<input class="hide" type="text" name="txt2">
+		<input class="hide" type="text" name="txt3">
+		<input class="hide" type="text" name="txt4">
+		<input class="hide" type="text" name="txt5">
+
+		<button type="button" onclick="addElement(this.form);">Start new timer!</button>
 		</div>
+
+
+
 	</body>
 </html>
 
