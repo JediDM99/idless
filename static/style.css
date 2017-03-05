@@ -1,9 +1,19 @@
 body {
-	background-color: red;
+	background-color: #bdc3c7;
 }
 
+#logocontainer {
+	margin-top: 1000px;
+	width: 120px;
+	height: 100px;
+	background-color: #ff0000;
+
 #logo {
-	color: red;
+	color: #ffffff;
+	font-size: 80px;
+	width: 100px;
+	font-family: 'Lobster', cursive;
+	text-align: center;
 }
 
 .timerbutton {
