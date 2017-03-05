@@ -4,53 +4,6 @@
 	<title>Idless</title>
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<<<<<<< HEAD
-		<link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="../static/style.css">
-	</head>
-	<body
-
-		<h1 id="logo", align="center">Idless</h1>
-
-		<div style="text-align: center;">
-			<div id="timer_label"></div>
-			<div id="time_remaining"></div>
-			<button class="buttons" id="clear_button" onclick="removeTimer()">
-		</div>
-
-	<div class="headercontainer">
-		<div class="logocontainer">
-			<h1 id="logo">Idless</h1>
-		</div>
-	</div>
-		<div class="timerbuttoncontainer">
-			<button class="buttons" id="createNew_button" onclick="createPrompt()">Start a new timer</button>
-			
-=======
-		<script src="../static/script.js"></script>
-		<script type="text/javascript">
-			function addElement(f) {
-				var aInputs=f.getElementsByTagName('input');
-				for(var i=0; i<aInputs.length; i++) {
-				    if(aInputs[i].className=='hide') {
-				        aInputs[i].className='';
-				        break;
-				        }
-				    }
-				}
-		</script>
-
-		<script type="text/javascript">
-			function creatNew(f) {
-				var aInputs=f.getElementsByTagName('input');
-				for(var i=0; i<aInputs.length; i++) {
-				    if(aInputs[i].className=='hide') {
-				        aInputs[i].className='';
-				        break;
-				        }
-				    }
-				}
-		</script>
 		<link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="../static/style.css">
 	</head>
@@ -65,7 +18,12 @@
 	</div>
 		<h1 id="whatIsIdless">What is Idless?</h1>
 		<p id="idlessDescription">Idless is an application designed to let you set reminders for yourself and message you once they happen. 
-		Whether it's picking up your laundry or meeting a friend for dinner, Idless can help you be sure you do whatever you need to.
+		Whether it's picking up your laundry or meeting a friend for dinner, Idless can help you be sure you do whatever you need to.</p>
+		<div style="text-align: center;">
+			<div id="timer_label"></div>
+			<div id="time_remaining"></div>
+			<button class="buttons" id="clear_button" onclick="removeTimer()"></button>
+		</div>
 		<!-- forms -->
 		<form action="#" name="form1">
 		<div style="text-align: center;">
@@ -75,7 +33,6 @@
 		<input class="hide" type="text" name="txt4">
 		<input class="hide" type="text" name="txt5">
 		<button class="buttons" id="clear_button"><span class="buttonstext"></span>clear</button>
->>>>>>> origin/master
 		</div>
 	</body>
 </html>
