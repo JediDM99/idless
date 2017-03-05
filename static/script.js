@@ -3,31 +3,50 @@ var timerIsGoing
 
 //need to create alert when you click the button
 function createPrompt() {
-	var label = prompt("Timer Label:")
+	label = prompt("What are you making?")
 	var time = prompt("Time Remaining (hh:mm):").split(":")
-	var hours = Number(time[0])
-	var minutes = Number(time[1])
+	var hours = time[0]
+	var minutes = time[1]
 	//send preliminary message to user
-	jQuery.post(url + '/prelim', {'label':label, 'hours':hours, 'minutes':minutes}, function(){console.log('completed req')})
+	//jQuery.post('/prelim', JSON.stringify({'label':label, 'hours':hours, 'minutes':minutes}), function(){console.log('completed req')}, "json")
+	$.ajax({
+        url: "/prelim",
+        type: "POST",
+        data: JSON.stringify({
+          label: label,
+          hours: hours,
+          minutes: minutes
+        }),
+        dataType: "json",
+        contentType: "application/json"
+      })
 	timerIsGoing=true
-	updateTime(hours,minutes)
+	updateTime(Number(hours),Number(minutes))
 };
 
-function updateTime(h, m) {
+function updateTime(h, m) {//FIX THIS!!!!
 	while(timerIsGoing) {
 		//show the time on the timer
 		checkTime(m)
 	    document.getElementById('time_remaining').innerHTML = h + ":" + m
 
 		//wait one minute
-		myVar = setTimeout(function blank(){}, 60)//in reality they should be set to 60000, this is for testing purposes
+		myVar = setTimeout(function blank(){}, 60000)//in reality they should be set to 60000, this is for testing purposes
 
 	    //decrement minutes. If minutes go under 0, reset them and decrease hours
 	    if(m>0) m--
 	    else if(h==0 && m==0) {
 	    	//send a "done" message through AJAX
-	    	jQuery.post(url + '/labels', {'label':label}, function(){console.log('completed req')})
-	    	removeTimer()
+		    $.ajax({
+	        	url: "/labels",
+	        	type: "POST",
+	        	data: JSON.stringify({
+	        		label: label
+       		 	}),
+      			dataType: "json",
+      		  	contentType: "application/json"
+     		 })
+			removeTimer()
 	    	return;
 	    }
 	    else {
@@ -37,7 +56,15 @@ function updateTime(h, m) {
 
 	    if(h==0 && m==5) {
 	    	//send a "5 mins left" message through AJAX
-	    	jQuery.post(url + '/labels', {'label':label}, function(){console.log('completed req')})
+		    $.ajax({
+	        	url: "/reminder",
+	        	type: "POST",
+	        	data: JSON.stringify({
+	        		label: label
+       		 	}),
+      			dataType: "json",
+      		  	contentType: "application/json"
+     		})
 	    }
 	}
 }
