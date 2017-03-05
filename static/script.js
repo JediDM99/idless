@@ -7,7 +7,7 @@ function createPrompt() {
 	var time = prompt("Time Remaining (hh:mm):").split(":")
 	var hours = time[0]
 	var minutes = time[1]
-	while !(isNumber(hours)&&isNumber(minutes)) {
+	while (!(isNumber(hours)&&isNumber(minutes))) {
 	var time = prompt("Time Remaining (hh:mm):").split(":")
 	var hours = time[0]
 	var minutes = time[1]	
