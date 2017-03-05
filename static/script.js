@@ -68,8 +68,3 @@ function checkTime(i) {
 function isNumber(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
-
-//AJAX code goes here
-//one should pass preliminary message
-//two should send 5 mins left message
-//three should send done message
