@@ -47,7 +47,7 @@ def prelim():
     label = request.json["label"]
     hours = request.json["hours"]
     minutes = request.json["minutes"]
-    print "Received prelim for " + label + ", " + hours + ":" + minutes
+    print("Received prelim for " + label + ", " + hours + ":" + minutes)
     client.messages.create(
 	    to="+16109370549", 
 	    from_="+14848044148", 
@@ -61,16 +61,16 @@ def prelim():
 def reminder():
     # Extract data from request
     label = request.json["label"]
-    print "Received reminder for " + str(label)
+    print("Received reminder for " + str(label))
 
     return json.dumps({"status": "OK"})
 
 @app.route("/labels", methods=["POST"])
 def labels():
     # Extract data from request
-    print request.json
+    print(request.json)
     label = request.json["label"]
-    print "Received label " + str(label)
+    print("Received label " + str(label))
 
     return json.dumps({"status": "OK"})
 
